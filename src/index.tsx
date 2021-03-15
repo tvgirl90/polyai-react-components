@@ -1,13 +1,13 @@
-// import * as React from 'react'
-// import styles from './styles.module.css'
-export { default as PAICarousel } from './components/carousel/carrousel'
+import * as React from 'react'
+import styles from './styles.module.css'
+import PAICarousel from './components/carousel/carousel'
 
-// interface Props {
-//   text: string
-// }
+interface Props {
+  text: string
+}
 
-// const ExampleComponent = ({ text }: Props) => {
-//   return <div className={styles.test}>Example Component: {text}</div>
-// }
+const ExampleComponent = ({ text }: Props) => {
+  return <div className={styles.test}>Example Component: {text}</div>
+}
 
-// export { ExampleComponent }
+export { ExampleComponent, PAICarousel }

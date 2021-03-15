@@ -2,8 +2,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import React, { useEffect, useState } from 'react'
 import { Carousel, CarouselControl, CarouselItem } from 'reactstrap'
 import { batch } from '../../utils'
+import styles from './carousel.module.scss'
 
-const PAICarousel: React.FunctionComponent<React.ElementType[]> = (data) => {
+interface PAICarouselProps {
+  data: any[]
+  generator: (element: any, key: number) => JSX.Element
+}
+
+const PAICarousel: React.FunctionComponent<PAICarouselProps> = ({
+  data,
+  generator
+}) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [animating, setAnimating] = useState(false)
   const [minLength, setMinLength] = useState(2)
@@ -29,23 +38,19 @@ const PAICarousel: React.FunctionComponent<React.ElementType[]> = (data) => {
     return () => window.removeEventListener('resize', updateCarousel)
   })
 
-  const slides = batch(data, minLength).map(
-    (dataBatch: React.ElementType[], i: number) => {
-      return (
-        <CarouselItem
-          onExiting={() => setAnimating(true)}
-          onExited={() => setAnimating(false)}
-          key={i}
-        >
-          <div className='speaker-wrapper'>
-            {dataBatch.map((Element: React.ElementType, j: number) => (
-              <Element key={j} />
-            ))}
-          </div>
-        </CarouselItem>
-      )
-    }
-  )
+  const slides = batch(data, minLength).map((dataBatch: any[], i: number) => {
+    return (
+      <CarouselItem
+        onExiting={() => setAnimating(true)}
+        onExited={() => setAnimating(false)}
+        key={i}
+      >
+        <div className={styles['speaker-wrapper']}>
+          {dataBatch.map((element: any, j: number) => generator(element, j))}
+        </div>
+      </CarouselItem>
+    )
+  })
 
   const next = () => {
     if (animating) return
@@ -62,7 +67,7 @@ const PAICarousel: React.FunctionComponent<React.ElementType[]> = (data) => {
   }
 
   return (
-    <div className='speakers'>
+    <div className={styles['pai-carousel']}>
       <div>
         <Carousel
           ride='carousel'
