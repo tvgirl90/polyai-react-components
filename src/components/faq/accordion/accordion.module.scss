@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
-@import '../../../scss/variables.scss';
+$primary: grey;
+$secondary: red;
+$primary-lite: lightgrey;
 
 /* Style the accordion section */
 
 $qa-border: 3px solid $secondary;
 .accordion__section {
+    width: 100%;
     display: flex;
     flex-direction: column;
     border: $qa-border;

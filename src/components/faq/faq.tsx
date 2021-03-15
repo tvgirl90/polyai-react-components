@@ -14,10 +14,10 @@ export interface PAIFaqProps {
 
 const PAIFaq: React.FunctionComponent<PAIFaqProps> = ({ faqEntry }) => {
   return (
-    <div className={styles.faq}>
+    <div className={styles['pai-faq']}>
       <Row xs='1' md='2'>
         {faqEntry.map((_, i) => (
-          <Col key={i} className={styles['faq-col-padding']}>
+          <Col key={i} className={styles['pai-faq-col-padding']}>
             <Accordion
               key={i}
               title={faqEntry[i].question}

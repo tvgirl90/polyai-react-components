@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { PAICarousel } from 'polyai-react-components'
+import { PAICarousel, PAIFaq } from 'polyai-react-components'
 // import  from 'polyai-react-components'
 import 'polyai-react-components/dist/index.css'
 
@@ -22,21 +22,42 @@ const App = () => {
     height: "300px"
   }}>{data.test}</div>)
 
-  let props = {
+  let cProps = {
     data: dataForCarousel,
     generator: generator
   }
+
+  let faqProps = [
+    { 
+      question: "question1",
+      answer: "answer1"
+    },{
+      question: "question1",
+      answer: "answer1"
+    },{
+      question: "question1",
+      answer: "answer1"
+    },
+  ]
+
   return (
-    <div style={{
-        width: "60%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "darkolivegreen"
-      }}>
-      <PAICarousel {...props} />
-    </div>
+    <React.Fragment>
+      <div style={{
+          width: "60%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "darkolivegreen"
+        }}>
+        <PAICarousel {...cProps} />
+      </div>
+      <div>
+        <PAIFaq faqEntry={faqProps} />
+      </div>
+    </React.Fragment>
+
+
   )
 }
 

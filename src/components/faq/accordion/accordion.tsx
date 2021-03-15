@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import Chevron from '../chevron/chevron'
-import './accordion.scss'
+import styles from './accordion.module.scss'
 
 interface AccordionProps {
   title: string
@@ -35,18 +35,21 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
   }
 
   return (
-    <div className='accordion__section'>
-      <button className={`accordion ${setActive}`} onClick={toggleAccordion}>
-        <p className='accordion__title'>{title}</p>
-        <Chevron className={`${setRotate}`} width={10} fill='#777' />
+    <div className={styles.accordion__section}>
+      <button
+        className={styles[`accordion ${setActive}`]}
+        onClick={toggleAccordion}
+      >
+        <p className={styles.accordion__title}>{title}</p>
+        <Chevron className={styles[`${setRotate}`]} width={10} fill='#777' />
       </button>
       <div
         ref={contentRef}
         style={{ maxHeight: `${setHeight}` }}
-        className='accordion__content'
+        className={styles.accordion__content}
       >
         <div
-          className='accordion__text'
+          className={styles.accordion__text}
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>
