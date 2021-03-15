@@ -25,7 +25,6 @@ const App = () => {
   let props = {
     data: dataForCarousel,
     generator: generator
-    // text: "Create React Example 😄"
   }
   return (
     <div style={{
