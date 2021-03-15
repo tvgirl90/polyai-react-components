@@ -16,6 +16,11 @@ put bloc of code and an example how to import and use it here. List all props an
 ### Navigation Bar
 put bloc of code and an example how to import and use it here. List all props and what they mean in a beautiful table
 
+### Sandwich NavBar
+put bloc of code and an example how to import and use it here. List all props and what they mean in a beautiful table
+
 ### Sponsors
 put bloc of code and an example how to import and use it here. List all props and what they mean in a beautiful table
 
+### RoundImage
+put bloc of code and an example how to import and use it here. List all props and what they mean in a beautiful table
