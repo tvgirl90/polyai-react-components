@@ -34,14 +34,13 @@ const Accordion: React.FunctionComponent<AccordionProps> = ({
     )
   }
 
+  let buttonClass = 'accordion ' + setActive
+
   return (
     <div className={styles.accordion__section}>
-      <button
-        className={styles[`accordion ${setActive}`]}
-        onClick={toggleAccordion}
-      >
+      <button className={styles[buttonClass]} onClick={toggleAccordion}>
         <p className={styles.accordion__title}>{title}</p>
-        <Chevron className={styles[`${setRotate}`]} width={10} fill='#777' />
+        <Chevron className={styles[setRotate]} width={10} fill='#777' />
       </button>
       <div
         ref={contentRef}

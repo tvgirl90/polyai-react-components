@@ -1,0 +1,19 @@
+.pai-section-heading {
+    width: fit-content;
+    margin: auto;
+    h2 {
+        font-weight: 300;
+        color: black;
+        font-size: 40;
+        margin-bottom: 0.6em;
+        text-align: center;
+    }
+     ::after {
+        display: block;
+        height: .1rem;
+        background-color: #ef4852;
+        content: "";
+        width: 7rem;
+        margin: 2rem auto 5rem;
+    }
+}

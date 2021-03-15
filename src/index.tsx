@@ -1,14 +1,5 @@
-import * as React from 'react'
-import styles from './styles.module.css'
 import PAICarousel from './components/carousel/carousel'
 import PAIFaq from './components/faq/faq'
+import PAISectionHeading from './components/section-heading/section-heading'
 
-interface Props {
-  text: string
-}
-
-const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
-
-export { ExampleComponent, PAICarousel, PAIFaq }
+export { PAICarousel, PAIFaq, PAISectionHeading }

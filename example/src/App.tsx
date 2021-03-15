@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { PAICarousel, PAIFaq } from 'polyai-react-components'
-// import  from 'polyai-react-components'
+import { PAICarousel, PAIFaq, PAISectionHeading } from 'polyai-react-components'
 import 'polyai-react-components/dist/index.css'
 
 const dataForCarousel: any[] = [];
@@ -54,6 +53,9 @@ const App = () => {
       </div>
       <div>
         <PAIFaq faqEntry={faqProps} />
+      </div>
+      <div>
+        <PAISectionHeading title="TITRE" />
       </div>
     </React.Fragment>
 
